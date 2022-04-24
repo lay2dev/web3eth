@@ -110,7 +110,7 @@ module Web3
       def call_contract contract_address, method_name, args
         function = functions[method_name]
         raise "No method found in ABI: #{method_name}" unless function
-        raise "Function #{method_name} is not constant: #{method_name}, requires to sign transaction" unless function.constant
+        # raise "Function #{method_name} is not constant: #{method_name}, requires to sign transaction" unless function.constant
         function.do_call web3_rpc, contract_address, args
       end
 
