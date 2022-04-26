@@ -158,8 +158,8 @@ module Web3::Eth::Abi
           "#{size}#{value}"
         else # fixed length type
           sub = type.sub.to_i
-          raise ValueOutOfBounds, "invalid bytes length #{sub}" if arg.size > sub
-          raise ValueOutOfBounds, "invalid bytes length #{sub}" if sub < 0 || sub > 32
+          # raise ValueOutOfBounds, "invalid bytes length #{sub}" if arg.size > sub
+          # raise ValueOutOfBounds, "invalid bytes length #{sub}" if sub < 0 || sub > 32
           Utils.rpad(arg, BYTE_ZERO, 32)
         end
       when 'hash'
